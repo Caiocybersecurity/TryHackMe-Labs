@@ -15,10 +15,14 @@ Durante a análise dos logs, notei algo estranho no diretório \Pictures, o que 
 * **Diretório de Execução:** `C:\Users\Administrator\Pictures\`.
 * **Process ID (PID):** 5484.
 
+![Execução do Malware - Event ID 1](print_sysmon_01.png)
+
 ### 3. Comunicação com Comando e Controle (Event ID 22)
 Ao analisar as consultas DNS (**Event ID 22**), confirmei que o malware tentou estabelecer ligação externa logo após a execução.
 * **Domínio Malicioso:** `rjj.store`.
 * **Processo Solicitante:** `C:\Users\Administrator\Pictures\best-cat.jpg.exe`.
+
+![Consulta DNS Maliciosa - Event ID 22](print_dns_query.png)
 
 ## 💡 Conclusão
 O incidente confirmou uma infecção por malware via Phishing. O atacante utilizou um nome de ficheiro focado em engenharia social para garantir a execução e, em seguida, tentou contactar um domínio de C2 externo para receber instruções.
